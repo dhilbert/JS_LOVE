@@ -24,6 +24,25 @@
 
 <script type="text/javascript" src="/JS_LOVE/js/loader.js"></script>
 
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://3.36.83.6/JS_LOVE/">
+<meta property="og:title" content="임사장님 요구사항">
+<meta property="og:image" content="https://dispatch.cdnser.be/cms-content/uploads/2019/12/01/7e488e45-364e-4a4b-bb68-fa4a7f430af2.jpg">
+<meta property="og:description" content="임사장님 이렇게 하는게 맞는지 확인 부탁 드립니다.">
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 
