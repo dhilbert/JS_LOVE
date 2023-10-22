@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Asia/Seoul');
 include_once('lib/dbcon_JS_LOVE.php');
 
 $count_cryptology = isset($_GET['count_cryptology']) ? $_GET['count_cryptology'] : null;
@@ -7,6 +7,7 @@ $count_cryptology = isset($_GET['count_cryptology']) ? $_GET['count_cryptology']
 
 $reg_ip = $_SERVER['REMOTE_ADDR'];
 $reg_date = date("Y-m-d H:i:s");
+
 
 
 
