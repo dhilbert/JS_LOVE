@@ -27,9 +27,9 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://3.36.83.6/JS_LOVE/">
-<meta property="og:title" content="수호네트웍크!!!!">
+<meta property="og:title" content="수호 네트워크">
 <meta property="og:image" content="http://3.36.83.6/JS_LOVE/KakaoTalk_20230929_203256499.jpg">
-<meta property="og:description" content="수호 네트웍크 프로토타입.">
+<meta property="og:description" content="대표자 : 임지훈(010-6500-8129)">
 
 
 
