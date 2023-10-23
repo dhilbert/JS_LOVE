@@ -17,7 +17,7 @@ $insert_res	=  mysqli_query($real_sock,$insert_sql) or die(mysqli_error($real_so
 	
 echo "<script>
 alert('삭제되었습니다.');
-parent.location.replace('/JS_LOVE/index.php');
+parent.location.replace('/JS_LOVE/setting.php');
 </script> ";
 
 ?>	

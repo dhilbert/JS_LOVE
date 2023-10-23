@@ -45,6 +45,7 @@ function hd_drop($num,$grobal,$sub_name,$sub_url){
 
 		<ul class="nav menu" >
 			<li <?php hd_active("index.php");?>><a href="/JS_LOVE/index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg>Home</a></li>
+			<li <?php hd_active("setting.php");?>><a href="/JS_LOVE/setting.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg>기기등록</a></li>
 			<li <?php hd_active("home2.php");?>><a href="/JS_LOVE/home2.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg>암호표</a></li>
 
 		

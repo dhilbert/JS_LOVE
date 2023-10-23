@@ -4,10 +4,77 @@ include_once('contents_header.php');
 include_once('contents_profile.php');
 include_once('contents_sidebar.php');
 
+
+	$sql	 = "select sum(count) as cnt from save_crypotology ;";
+	$res	=  mysqli_query($real_sock,$sql) or die(mysqli_error($real_sock));
+	$info	 = mysqli_fetch_array($res);
+	$total = $info["cnt"];
+	$temp_1 = rand(0,floor($total/5)); //감지
+	$temp_total = $total - $temp_1;
+	$temp_2 = rand(0,floor($temp_total/5)); //오류
+	$temp_total = $total - $temp_1;
+	$temp_3 = $total - $temp_1 -$temp_2; 
+	
+
+	function hd_noraml($name){
 ?>
+	<div class="col-md-3">
+				<div class="panel panel-info">
+					<div class="panel-heading"><div align = 'center'><?php echo $name?></div></div>
+					<div class="panel-body" >
+						<table border=0 style="width:70%" align = 'center'>
+						<tr>
+							<td align = 'left'><button type="reset" class="btn btn-default">&nbsp &nbsp 설&nbsp 정&nbsp &nbsp </button></td>
+							<td align = 'right'><button type="reset" class="btn btn-default">&nbsp &nbsp 수&nbsp 정&nbsp &nbsp </button>		</td>
+						</tr>
+					</table>						
+					</div>
+				</div>
+			</div>
+<?php
+	}
+	function hd_error($name){
+?>			
+
+			<div class="col-md-3">
+				<div class="panel panel-orange">
+					<div class="panel-heading dark-overlay"><?php echo $name?></div>
+					<div class="panel-body" >
+					<table border=0 style="width:70%" align = 'center'>
+						<tr>
+							<td align = 'left'><button type="reset" class="btn btn-default">&nbsp &nbsp 설&nbsp 정&nbsp &nbsp </button></td>
+							<td align = 'right'><button type="reset" class="btn btn-default">&nbsp &nbsp 수&nbsp 정&nbsp &nbsp </button>		</td>
+						</tr>
+					</table>						
+					</div>
+				</div>
+			</div><!--/.col-->
+
+<?php
+	}
+	function hd_check($name){
+?>			
 
 
 
+			<div class="col-md-3">
+				<div class="panel panel-red">
+					<div class="panel-heading dark-overlay" ><?php echo $name?></div>
+					<div class="panel-body" >
+					<table border=0 style="width:70%" align = 'center'>
+						<tr>
+							<td align = 'left'><button type="reset" class="btn btn-default">&nbsp &nbsp 설&nbsp 정&nbsp &nbsp </button></td>
+							<td align = 'right'><button type="reset" class="btn btn-default">&nbsp &nbsp 수&nbsp 정&nbsp &nbsp </button>		</td>
+						</tr>
+					</table>						
+					</div>
+				</div>
+			</div><!--/.col-->
+
+<?php
+	}
+
+?>			
 
 
 	
@@ -22,10 +89,17 @@ include_once('contents_sidebar.php');
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header"><i>영업점 이름 노출</i></h1>
+				<h1 class="page-header">수호 네트웍크</h1>
+				＠ Copyright©2022 SH 네트웍크 대표자 : 박종식, 윤희동 <p><br><p>
 			</div>
 		</div>
-		
+
+
+
+
+
+
+
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-lg-3">
 				<div class="panel panel-blue panel-widget ">
@@ -34,15 +108,75 @@ include_once('contents_sidebar.php');
 							<svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large"><?php
-								$sql	 = "select sum(count) as cnt from save_crypotology ;";
-								$res	=  mysqli_query($real_sock,$sql) or die(mysqli_error($real_sock));
-								$info	 = mysqli_fetch_array($res);
-								echo $info["cnt"];
-							
-							?></div>
-							<div class="text-muted">총 등록된 Sensor 갯수</div>
+							<div class="large"><?php echo $total ?></div>
+							<div class="text-muted">총 Sensor갯수 </div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-teal panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large"><?php echo $temp_3 ?></div>
+							<div class="text-muted">정상</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		
+
+
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-red panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large"><?php echo $temp_2 ?></div>
+							<div class="text-muted">감지</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-orange panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked empty-message"><use xlink:href="#stroked-empty-message"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large"><?php echo $temp_1 ?></div>
+							<div class="text-muted">오류</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+				
+					Sensor 등록 현황
+						
+						
+				
+					</div>
+
+					<div class="panel-body">
 					</div>
 				</div>
 			</div>
@@ -52,100 +186,66 @@ include_once('contents_sidebar.php');
 
 
 		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-					<table border=0 style="width:100%">
-						<tr>
-							<td align = 'left'>Sensor 등록 이력	</td>
-							<td align = 'right'><a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-success">기기 등록</a>		</td>
-						</tr>
-					</table>						
-					
-						
-				
-				</div>
+			
+		
+<?php
+$temp_array = array();
+for($i=1 ; $i < $total-1 ;$i++){
+	array_push($temp_array,$i)	;
 
-					<div class="panel-body">
+}
+shuffle($temp_array);
 
 
+$error_array = array();
+$check_array = array();
+for($i=0 ; $i < $temp_1  ;$i++){
+	array_push($error_array,$temp_array[$i])	;
+}
 
-						<table data-toggle="table"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-							<thead>
-								<tr>
-									<?php	
-										$num=0;
-										$name="#";hd_thead_th($num,$name);$num+=1;
-														
-										$name="등록 갯수";hd_thead_th($num,$name);$num+=1;
-										$name="등록 시간 ";hd_thead_th($num,$name);$num+=1;
-										$name="등록 ip";hd_thead_th($num,$name);$num+=1;
-										$name="삭제";hd_thead_th($num,$name);$num+=1;
-										
-									?>
-								
+for($i=0 ; $i < $temp_2  ;$i++){
+	array_push($check_array,$temp_array[count($temp_array)-$i-1])	;
+}
 
-
-								</tr>
-							</thead>
-						<tbody>
-						<?php
-
-								$total_num =0;
-								$sql	 = "select * from save_crypotology order by idx Desc;";
-								$res	=  mysqli_query($real_sock,$sql) or die(mysqli_error($real_sock));
-								while($info	 = mysqli_fetch_array($res)){
-									$total_num +=1;
-									$num=0;
-									echo "<tr>";
-										$name = $total_num ;	hd_tbody_td($num,$name);$num+=1;
-										
-										$name = $info['count'] ;	hd_tbody_td($num,$name);$num+=1;
-										$name = $info['reg_date'] ;	hd_tbody_td($num,$name);$num+=1;
-										$name = $info['reg_ip'] ;	hd_tbody_td($num,$name);$num+=1;
-										echo "<td><a href='index_del.php?idx=".$info['idx']."'  class='btn btn-danger'>등록 정보 삭제</a></td>";
-
-										
-									echo "</tr>";
+for($total_i=1 ; $total_i < $total+1  ;$total_i++){
+	if($total_i<10){
+		$name = "Sensor_A_0".$total_i;
+	}else{
+		$name = "Sensor_A_".$total_i;
+	}
 
 
-								};
+	if(in_array($total_i,$check_array)){
+		hd_check($name);
+
+	}elseif(in_array($total_i,$error_array)){
+		hd_error($name);
+
+	}else{
+		hd_noraml($name);
+
+	}
+	
+	
+	
+}
 
 
 
-									
+?>
 
-						?>
-
-						</tbody>
-						</table>
+			
 
 
 
 
+		
+		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					</div>
-				</div>
-			</div>
+		
+			
+			
+		</div>
 
 
 
